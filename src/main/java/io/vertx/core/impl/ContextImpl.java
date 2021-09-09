@@ -28,7 +28,7 @@ import java.util.concurrent.RejectedExecutionException;
 /**
  * @author <a href="http://tfox.org">Tim Fox</a>
  */
-abstract class ContextImpl extends AbstractContext {
+public class ContextImpl extends AbstractContext {
 
   /**
    * Execute the {@code task} disabling the thread-local association for the duration
@@ -75,7 +75,7 @@ abstract class ContextImpl extends AbstractContext {
   final WorkerPool workerPool;
   final TaskQueue orderedTasks;
 
-  ContextImpl(VertxInternal vertx,
+  public ContextImpl(VertxInternal vertx,
               int kind,
               EventLoop eventLoop,
               WorkerPool internalBlockingPool,
