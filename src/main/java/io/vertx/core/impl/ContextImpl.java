@@ -301,10 +301,6 @@ public class ContextImpl extends AbstractContext {
 
   @Override
   public void execute(Runnable task) {
-    execute(this, task);
-  }
-
-  void execute(AbstractContext ctx, Runnable task) {
     switch (kind) {
       case KIND_EVENT_LOOP:
         EventLoop eventLoop = nettyEventLoop();
@@ -329,10 +325,6 @@ public class ContextImpl extends AbstractContext {
 
   @Override
   public final <T> void execute(T argument, Handler<T> task) {
-    execute(this, argument, task);
-  }
-
-  <T> void execute(AbstractContext ctx, T argument, Handler<T> task) {
     switch (kind) {
       case KIND_EVENT_LOOP:
         EventLoop eventLoop = nettyEventLoop();
